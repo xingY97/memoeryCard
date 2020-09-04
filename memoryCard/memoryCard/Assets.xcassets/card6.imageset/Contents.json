@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "compression-type" : "automatic",
       "filename" : "mae-mu-oBVa-etiSZQ-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"
@@ -13,6 +14,18 @@
     {
       "filename" : "mae-mu-oBVa-etiSZQ-unsplash@3x.jpg",
       "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

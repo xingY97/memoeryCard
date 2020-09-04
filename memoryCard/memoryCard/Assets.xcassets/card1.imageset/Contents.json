@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "compression-type" : "automatic",
       "filename" : "mae-mu-_C5zsV_p-YI-unsplash.jpg",
       "idiom" : "universal",
       "scale" : "1x"

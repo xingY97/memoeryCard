@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//custom sub-class of UICollectionViewCell
 class CardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var frontImageView: UIImageView!
