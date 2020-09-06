@@ -29,6 +29,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // MARK: - Collection View Delegate Methods
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+    
+        let width  = (view.frame.width-20)/2
+        
+        return CGSize(width: width, height: width)
+        
+    }
+    
     //how many items to display returning an Int
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return number of cards
