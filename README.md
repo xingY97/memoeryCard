@@ -16,9 +16,9 @@ View controller
 
 
 Week 4
-```
-    //Created UicollectionView delegate to display cards
-    
+
+Created UicollectionView delegate to display cards
+```   
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width  = (view.frame.width-200)/4
         let height = (view.frame.height)/2
