@@ -8,7 +8,7 @@
 
 import UIKit
 //grabs the card data from cardModel
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
     let model = CardModel()
     var cardsArray = [Card]()
@@ -25,18 +25,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
     }
     
     // MARK: - Collection View Delegate Methods
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-    
-        let width  = (view.frame.width-20)/2
-        
-        return CGSize(width: width, height: width)
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width  = (view.frame.width-200)/4
+        let height = (view.frame.height)/2
+        return CGSize(width: width, height: height)
     }
-    
+
     //how many items to display returning an Int
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return number of cards
@@ -55,4 +54,5 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
 }
+
 
