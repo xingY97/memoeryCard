@@ -43,10 +43,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     //returning whole collectionViewCell object
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //get a cell
+        //get a cell treat it as CardcollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCollectionViewCell
         
-        //configure it
         
         //return it
         
