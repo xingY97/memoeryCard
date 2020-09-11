@@ -45,13 +45,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //get a cell treat it as CardcollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCollectionViewCell
+        cell.card = cardsArray[indexPath.item]
         
-        
+        cell.backImageView.image = UIImage(named: cell.card.imageName)
+        if cell.card.isFlipped {
+            cell.frontImageView.isHidden = true
+        }else {
+            cell.frontImageView.isHidden = false
+        }
+
         //return it
-        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedItem = cardsArray[indexPath.item]
+        selectedItem.isFlipped = true
+        print(selectedItem.imageName)
+    }
 }
 
 
