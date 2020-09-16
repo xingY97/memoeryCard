@@ -33,7 +33,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // MARK: - Collection View Delegate Methods
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width  = (view.frame.width-200)/4
+        let width  = (view.frame.width-200)/8
         let height = (view.frame.height)/2
         return CGSize(width: width, height: height)
     }
@@ -86,17 +86,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 firstFlippedCardIndex = indexPath
             }
             else {
-            
-                //second card that is flipped
-                
                 //run the comparing logic
-                checkForMatch(indexPath)
+                checkForMatch(secondFlippedCardIndex: indexPath)
             }
         }
         
     }
     // MARK: -Game Logic Methods
-    func checkForMatch(_ secondFlippedCardIndex:IndexPath) {
+    func checkForMatch(secondFlippedCardIndex:IndexPath) {
         
         //Get the two card objects for the two indices and see if they match
         let cardOne = cardsArray[firstFlippedCardIndex!.row]

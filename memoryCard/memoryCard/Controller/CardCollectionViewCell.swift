@@ -61,6 +61,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         //set the status of the card
         card?.isFlipped = false
     }
+    
     //remove card if is matched
     func remove(){
         //make the image views invisible
