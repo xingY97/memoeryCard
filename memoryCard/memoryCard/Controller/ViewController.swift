@@ -7,6 +7,9 @@
 //
 
 import UIKit
+var time = 20
+var timer1 = Timer()
+
 //grabs the card data from cardModel
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
@@ -14,8 +17,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cardsArray = [Card]()
     
     var firstFlippedCardIndex:IndexPath?
+    var secondFlippedCardIndex:IndexPath?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var timer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +32,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
+        timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.gameTimer), userInfo: nil, repeats: true)
+    
+    }
+    
+    @objc func gameTimer () {
+        timer.text = "Time Left: \(String(time))"
     }
     
     // MARK: - Collection View Delegate Methods
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width  = (view.frame.width-200)/8
+        let width  = (view.frame.width-200)/4
         let height = (view.frame.height)/2
         return CGSize(width: width, height: height)
     }
@@ -116,7 +126,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         else {
             //it's not a match
-            
             //flip back over
             cardOneCell?.flipDown()
             cardTwoCell?.flipDown()

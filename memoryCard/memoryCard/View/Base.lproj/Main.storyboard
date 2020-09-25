@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYC-hS-LcB">
-                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                                <rect key="frame" x="44" y="40" width="808" height="353"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F9g-g3-lud">
                                     <size key="itemSize" width="150" height="200"/>
@@ -61,22 +63,40 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left : " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxu-W4-LyL">
+                                <rect key="frame" x="74" y="6" width="85" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVU-ig-WNc">
+                                <rect key="frame" x="421" y="0.0" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hxu-W4-LyL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="0yZ-Sh-1In"/>
+                            <constraint firstItem="RVU-ig-WNc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7k0-Ga-1Q3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hxu-W4-LyL" secondAttribute="trailing" symbolic="YES" id="8ZN-vo-8EN"/>
                             <constraint firstItem="cYC-hS-LcB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9oW-4Y-sCf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cYC-hS-LcB" secondAttribute="trailing" id="BmN-sI-4DW"/>
-                            <constraint firstItem="cYC-hS-LcB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DPt-Os-cWy"/>
                             <constraint firstItem="yPf-x8-F4H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="K63-3K-njP"/>
                             <constraint firstAttribute="bottom" secondItem="yPf-x8-F4H" secondAttribute="bottom" id="KHL-BM-MH6"/>
                             <constraint firstItem="yPf-x8-F4H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lkq-lV-Xy4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cYC-hS-LcB" secondAttribute="bottom" id="Wfb-46-ozH"/>
+                            <constraint firstItem="hxu-W4-LyL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="XnD-ri-ZDB"/>
+                            <constraint firstItem="RVU-ig-WNc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nm1-0u-MdM"/>
+                            <constraint firstItem="cYC-hS-LcB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="yIG-wj-ilM"/>
                             <constraint firstAttribute="trailing" secondItem="yPf-x8-F4H" secondAttribute="trailing" id="ypw-Tg-vDy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="cYC-hS-LcB" id="mSJ-pQ-U18"/>
+                        <outlet property="timer" destination="hxu-W4-LyL" id="9I0-PX-Rt9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,5 +108,8 @@
         <image name="back" width="426.5" height="640"/>
         <image name="background" width="736" height="414"/>
         <image name="card1" width="1216" height="1520"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
