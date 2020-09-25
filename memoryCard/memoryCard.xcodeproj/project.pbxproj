@@ -16,6 +16,8 @@
 		227F68DB24F837B6005BF712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227F68D924F837B6005BF712 /* Main.storyboard */; };
 		227F68DD24F837B7005BF712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227F68DC24F837B7005BF712 /* Assets.xcassets */; };
 		227F68E024F837B7005BF712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227F68DE24F837B7005BF712 /* LaunchScreen.storyboard */; };
+		22C40E69251D7F0900E59BFC /* startPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C40E68251D7F0900E59BFC /* startPageViewController.swift */; };
+		22C40E6D251D823900E59BFC /* resultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C40E6C251D823900E59BFC /* resultPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		227F68DC24F837B7005BF712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		227F68DF24F837B7005BF712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		227F68E124F837B7005BF712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22C40E68251D7F0900E59BFC /* startPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startPageViewController.swift; sourceTree = "<group>"; };
+		22C40E6C251D823900E59BFC /* resultPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				227F68D724F837B6005BF712 /* ViewController.swift */,
 				221EE0A72501494A00A49463 /* CardCollectionViewCell.swift */,
+				22C40E68251D7F0900E59BFC /* startPageViewController.swift */,
+				22C40E6C251D823900E59BFC /* resultPageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 				221EE0A4250141D800A49463 /* CardModel.swift in Sources */,
 				221EE0A6250142D000A49463 /* Card.swift in Sources */,
 				227F68D424F837B6005BF712 /* AppDelegate.swift in Sources */,
+				22C40E6D251D823900E59BFC /* resultPageViewController.swift in Sources */,
+				22C40E69251D7F0900E59BFC /* startPageViewController.swift in Sources */,
 				221EE0A82501494A00A49463 /* CardCollectionViewCell.swift in Sources */,
 				227F68D624F837B6005BF712 /* SceneDelegate.swift in Sources */,
 			);

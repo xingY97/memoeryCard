@@ -18,13 +18,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cardsArray = [Card]()
     
     var firstFlippedCardIndex:IndexPath?
-    var secondFlippedCardIndex:IndexPath?
+   
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -39,7 +38,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     var gameScore: Int = 0 {
         didSet{
-            scoreLabel.text = String(gameScore)
+            scoreLabel.text = "Score is : \(String(gameScore))"
+            
         }
     }
     
@@ -128,6 +128,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         //compare two cards
         if cardOne.imageName == cardTwo.imageName{
+            score1 += 1
             //it's a match
             
             //set the status and remove them
@@ -138,10 +139,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cardTwoCell?.remove()
         }
         else {
+            score1 -= 1
+            print("/score1")
             //it's not a match
             //flip back over
             cardOneCell?.flipDown()
             cardTwoCell?.flipDown()
+        scoreLabel.text = "Score: \(score1)"
         }
         //Reset the firstFlippedCardIndex property
         firstFlippedCardIndex = nil
