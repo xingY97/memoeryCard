@@ -11,11 +11,20 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    var finalScore: Int?
     
-    @IBOutlet weak var ResultScore: UILabel!
     
     
-    override func viewDidLoad() {       
+    @IBOutlet weak var resultScore: UILabel!
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        if let score1 = finalScore{
+            resultScore.text = "Your Score: \(score1)"
+        }else {
+            print ("data didnt transfer")
+        }
+       
     }
 
     @IBAction func unwindToStart(_ sender: UIStoryboardSegue){

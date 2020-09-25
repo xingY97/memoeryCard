@@ -179,6 +179,7 @@
                                 <rect key="frame" x="194" y="190" width="77" height="13"/>
                                 <state key="normal" title="Play Again"/>
                                 <connections>
+                                    <action selector="playAgain:" destination="NzJ-s4-i8m" eventType="touchUpInside" id="r5R-vc-pLL"/>
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="playAgain" id="5JF-14-324"/>
                                 </connections>
                             </button>
@@ -210,6 +211,9 @@
                             <constraint firstItem="RSz-ro-gIG" firstAttribute="bottom" secondItem="s7F-rx-eJs" secondAttribute="bottom" constant="290" id="yuz-wZ-2be"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultScore" destination="s7F-rx-eJs" id="mIe-On-U9m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybc-HI-g7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="NzJ-s4-i8m" userLabel="Exit" sceneMemberID="exit"/>
@@ -218,7 +222,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4ci-cC-tk4"/>
         <segue reference="5JF-14-324"/>
     </inferredMetricsTieBreakers>
     <resources>

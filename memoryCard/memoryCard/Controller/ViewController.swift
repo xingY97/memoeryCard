@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -36,9 +36,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
     
     }
+    @IBAction func playAgain(_ sender: Any) {
+        self.dismiss(animated:false, completion: nil)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
+    }
     var gameScore: Int = 0 {
         didSet{
-            scoreLabel.text = "Score: \(String(gameScore))"
+            //scoreLabel.text = "Score: \(String(gameScore))"
             
         }
     }
@@ -130,7 +134,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         //compare two cards
         if cardOne.imageName == cardTwo.imageName{
-            score1 += 1
+            
             //it's a match
             
             //set the status and remove them
@@ -139,6 +143,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             cardOneCell?.remove()
             cardTwoCell?.remove()
+            score1 += 1
         }
         else {
             score1 -= 1
