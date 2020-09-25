@@ -38,7 +38,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     var gameScore: Int = 0 {
         didSet{
-            scoreLabel.text = "Score is : \(String(gameScore))"
+            scoreLabel.text = "Score: \(String(gameScore))"
             
         }
     }
@@ -49,9 +49,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             timer.text = "Time Left: \(String(time))"
         }else {
             timer1.invalidate()
+            performSegue(withIdentifier: "seeResult", sender: self)
         }
         
     }
+    
     
     // MARK: - Collection View Delegate Methods
     
