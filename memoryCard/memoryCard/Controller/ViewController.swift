@@ -32,12 +32,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.gameTimer), userInfo: nil, repeats: true)
+        timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
     
     }
     
     @objc func gameTimer () {
-        timer.text = "Time Left: \(String(time))"
+        if time != 0 {
+            time -= 1
+            timer.text = "Time Left: \(String(time))"
+        }else {
+            timer1.invalidate()
+        }
+        
     }
     
     // MARK: - Collection View Delegate Methods
