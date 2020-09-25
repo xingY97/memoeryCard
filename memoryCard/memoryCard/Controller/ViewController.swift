@@ -12,7 +12,8 @@ var timer1 = Timer()
 
 //grabs the card data from cardModel
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
+    
+    var score1 = 0
     let model = CardModel()
     var cardsArray = [Card]()
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
     
+    }
+    var gameScore: Int = 0 {
+        didSet{
+            scoreLabel.text = String(gameScore)
+        }
     }
     
     @objc func gameTimer () {

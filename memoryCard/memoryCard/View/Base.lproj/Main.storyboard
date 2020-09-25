@@ -96,12 +96,13 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="cYC-hS-LcB" id="mSJ-pQ-U18"/>
+                        <outlet property="scoreLabel" destination="RVU-ig-WNc" id="G5C-uE-fI1"/>
                         <outlet property="timer" destination="hxu-W4-LyL" id="9I0-PX-Rt9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="-130" y="174"/>
         </scene>
     </scenes>
     <resources>
