@@ -12,7 +12,7 @@ import UIKit
 enum Difficulty{
     case easy
     case medium
-    case difficult
+    case hard
 }
     
 
@@ -26,30 +26,24 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func easyPressed(_ sender: UIButton!) {
-        print("easy pressed")
+        goToGame(difficulty: .easy)
     }
     
-    @IBAction func mediumPressed(_ sender: Any) {
-        print("medium pressed")
+    @IBAction func mediumPressed(_ sender: UIButton!) {
+        goToGame(difficulty: .medium)
     }
     
-    @IBAction func difficultPressed(_ sender: Any) {
-        print("difficult pressed")
+    @IBAction func hardPressed(_ sender: UIButton!) {
+        goToGame(difficulty: .hard)
     }
     
     
     func goToGame(difficulty: Difficulty ){
         //navigation to game VC
         // send over the diffuculty    gameVC.difficulty = difficulty
+        let gameVC = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+        self.navigationController?.pushViewController(gameVC, animated: true)
+        self.present(gameVC, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

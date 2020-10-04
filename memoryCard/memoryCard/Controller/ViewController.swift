@@ -27,14 +27,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewWillAppear(_ animated: Bool) {
         
-        /*switch difficulty {
-        case .easy:
-            time = 100
-        case .medium
-        default:
-            <#code#>
-        }*/
-        
         time = 20
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
         
