@@ -21,35 +21,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="UDn-eN-Bch">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOg-lV-6q8">
-                                <rect key="frame" x="364" y="60" width="168" height="63"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="Hit to Play">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="toGameView" id="asA-Z2-YAy"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zQt-gL-ibr">
-                                <rect key="frame" x="642" y="110" width="100" height="193"/>
+                                <rect key="frame" x="571" y="110" width="171" height="193"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A71-gb-8TB">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="52.5"/>
                                         <state key="normal" title="Easy"/>
                                         <connections>
                                             <action selector="easyPressed:" destination="HpI-VY-Nbd" eventType="touchUpInside" id="Bsl-W8-N1X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-2X-tsy">
-                                        <rect key="frame" x="0.0" y="62.5" width="100" height="53"/>
+                                        <rect key="frame" x="0.0" y="62.5" width="171" height="53"/>
                                         <state key="normal" title="Medium"/>
                                         <connections>
                                             <action selector="mediumPressed:" destination="HpI-VY-Nbd" eventType="touchUpInside" id="rme-ns-zSW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENk-Xx-6Q0">
-                                        <rect key="frame" x="0.0" y="125.5" width="100" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="125.5" width="171" height="67.5"/>
                                         <state key="normal" title="Hard"/>
                                         <connections>
                                             <action selector="hardPressed:" destination="HpI-VY-Nbd" eventType="touchUpInside" id="ZNj-f6-Ql0"/>
@@ -57,22 +47,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose the difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rla-EB-T62">
+                                <rect key="frame" x="194" y="80" width="267" height="133"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="45W-zM-WsV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="45W-zM-WsV" firstAttribute="bottom" secondItem="zQt-gL-ibr" secondAttribute="bottom" constant="90" id="0rz-hs-rbb"/>
-                            <constraint firstItem="45W-zM-WsV" firstAttribute="trailing" secondItem="rOg-lV-6q8" secondAttribute="trailing" constant="320" id="581-Tq-j4n"/>
                             <constraint firstItem="zQt-gL-ibr" firstAttribute="top" secondItem="45W-zM-WsV" secondAttribute="top" constant="110" id="7Ph-zc-Ff3"/>
-                            <constraint firstItem="zQt-gL-ibr" firstAttribute="leading" secondItem="rOg-lV-6q8" secondAttribute="trailing" constant="110" id="7di-My-e4I"/>
                             <constraint firstItem="UDn-eN-Bch" firstAttribute="leading" secondItem="yPr-FV-3tE" secondAttribute="leading" id="Dxx-aO-vsC"/>
-                            <constraint firstItem="rOg-lV-6q8" firstAttribute="leading" secondItem="45W-zM-WsV" secondAttribute="leading" constant="320" id="JT5-UY-hec"/>
+                            <constraint firstItem="45W-zM-WsV" firstAttribute="bottom" secondItem="Rla-EB-T62" secondAttribute="bottom" constant="180" id="Huk-61-fWr"/>
                             <constraint firstItem="UDn-eN-Bch" firstAttribute="top" secondItem="yPr-FV-3tE" secondAttribute="topMargin" id="Ucq-SY-N7w"/>
-                            <constraint firstItem="45W-zM-WsV" firstAttribute="bottom" secondItem="rOg-lV-6q8" secondAttribute="bottom" constant="270" id="XkJ-ab-28N"/>
-                            <constraint firstItem="rOg-lV-6q8" firstAttribute="top" secondItem="45W-zM-WsV" secondAttribute="top" constant="60" id="c4m-S1-uHd"/>
+                            <constraint firstItem="zQt-gL-ibr" firstAttribute="leading" secondItem="Rla-EB-T62" secondAttribute="trailing" constant="110" id="Ued-vM-MRa"/>
+                            <constraint firstItem="Rla-EB-T62" firstAttribute="leading" secondItem="45W-zM-WsV" secondAttribute="leading" constant="150" id="Xju-Sh-kcb"/>
                             <constraint firstAttribute="bottom" secondItem="UDn-eN-Bch" secondAttribute="bottom" id="h6W-st-nLe"/>
                             <constraint firstItem="45W-zM-WsV" firstAttribute="trailing" secondItem="zQt-gL-ibr" secondAttribute="trailing" constant="110" id="jez-hh-rNR"/>
                             <constraint firstAttribute="trailing" secondItem="UDn-eN-Bch" secondAttribute="trailing" id="wJc-gu-Gpe"/>
+                            <constraint firstItem="Rla-EB-T62" firstAttribute="top" secondItem="45W-zM-WsV" secondAttribute="top" constant="80" id="wnf-tv-K0W"/>
                         </constraints>
                     </view>
                     <connections>
@@ -253,7 +248,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="asA-Z2-YAy"/>
+        <segue reference="4ci-cC-tk4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="426.5" height="640"/>

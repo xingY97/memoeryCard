@@ -26,6 +26,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func easyPressed(_ sender: UIButton!) {
+        time = 20
         goToGame(difficulty: .easy)
     }
     
@@ -44,6 +45,7 @@ class StartViewController: UIViewController {
         let gameVC = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
         self.navigationController?.pushViewController(gameVC, animated: true)
         self.present(gameVC, animated: true, completion: nil)
+        
     }
 
 }

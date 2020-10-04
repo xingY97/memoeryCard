@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum GameLevel: Int {
+enum GameLevel: String {
     case easy, medium, hard
     
     var gameLevel: Difficulty{

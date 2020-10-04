@@ -85,6 +85,7 @@
 			children = (
 				221EE0A3250141D800A49463 /* CardModel.swift */,
 				221EE0A5250142D000A49463 /* Card.swift */,
+				22171CFB252A6FE4003C96CA /* gameLevel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,7 +104,6 @@
 				227F68D724F837B6005BF712 /* ViewController.swift */,
 				221EE0A72501494A00A49463 /* CardCollectionViewCell.swift */,
 				22171CF62527AACB003C96CA /* StartViewController.swift */,
-				22171CFB252A6FE4003C96CA /* gameLevel.swift */,
 				22C40E6C251D823900E59BFC /* ResultPageViewController.swift */,
 			);
 			path = Controller;
