@@ -8,7 +8,8 @@
 
 import UIKit
 var time = 20
-var timer1 = Timer()
+var timer1: Timer?
+var difficulty: Difficulty? 
 
 //grabs the card data from cardModel
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -23,6 +24,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        /*switch difficulty {
+        case .easy:
+            time = 100
+        case .medium
+        default:
+            <#code#>
+        }*/
+        
+        time = 20
+        timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
+        
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,19 +50,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         //set the view controller as the datasource and delegate of the collection view
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
     
     }
+    
     @IBAction func playAgain(_ sender: Any) {
         self.dismiss(animated:false, completion: nil)
         self.presentingViewController?.dismiss(animated: false, completion: nil)
-    }
-    var gameScore: Int = 0 {
-        didSet{
-            //scoreLabel.text = "Score: \(String(gameScore))"
-            
-        }
     }
     
     @objc func gameTimer () {
@@ -52,13 +63,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             time -= 1
             timer.text = "Time Left: \(String(time))"
         }else {
-            timer1.invalidate()
+            if timer1 != nil{
+                
+                timer1?.invalidate()
+                timer1 = nil
+            }
             performSegue(withIdentifier: "seeResult", sender: self)
         }
-        
     }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ResultPageViewController{
+            destination.finalScore = score1
+            
+        }
+    }
+
     // MARK: - Collection View Delegate Methods
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -152,8 +171,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             //flip back over
             cardOneCell?.flipDown()
             cardTwoCell?.flipDown()
-        scoreLabel.text = "Score: \(score1)"
         }
+        scoreLabel.text = "Score: \(score1)"
         //Reset the firstFlippedCardIndex property
         firstFlippedCardIndex = nil
     }

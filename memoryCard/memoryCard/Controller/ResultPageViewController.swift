@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultPageViewController: UIViewController {
     
     var finalScore: Int?
-    
-    
     
     @IBOutlet weak var resultScore: UILabel!
     override func viewDidLoad() {
