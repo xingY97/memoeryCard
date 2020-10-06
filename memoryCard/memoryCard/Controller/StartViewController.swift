@@ -8,14 +8,6 @@
 
 import UIKit
 
-
-enum Difficulty{
-    case easy
-    case medium
-    case hard
-}
-    
-
 class StartViewController: UIViewController {
 
     @IBOutlet weak var easyButton: UIButton!
@@ -26,23 +18,23 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func easyPressed(_ sender: UIButton!) {
-        time = 20
-        goToGame(difficulty: .easy)
+        goToGame(level: .easy)
     }
     
     @IBAction func mediumPressed(_ sender: UIButton!) {
-        goToGame(difficulty: .medium)
+        goToGame(level: .medium)
     }
     
     @IBAction func hardPressed(_ sender: UIButton!) {
-        goToGame(difficulty: .hard)
+        goToGame(level: .hard)
     }
     
     
-    func goToGame(difficulty: Difficulty ){
+    func goToGame(level: GameLevel ){
         //navigation to game VC
         // send over the diffuculty    gameVC.difficulty = difficulty
         let gameVC = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+        gameVC.level = level
         self.navigationController?.pushViewController(gameVC, animated: true)
         self.present(gameVC, animated: true, completion: nil)
         

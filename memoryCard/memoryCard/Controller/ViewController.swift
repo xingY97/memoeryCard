@@ -7,9 +7,6 @@
 //
 
 import UIKit
-var time = 20
-var timer1: Timer?
-var difficulty: Difficulty? 
 
 //grabs the card data from cardModel
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -19,17 +16,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cardsArray = [Card]()
     
     var firstFlippedCardIndex:IndexPath?
-   
+    var time: Int!
+    var timer1: Timer!
+    var level: GameLevel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        time = 20
+        time = level.time
         timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimer), userInfo: nil, repeats: true)
-        
     }
 
     
